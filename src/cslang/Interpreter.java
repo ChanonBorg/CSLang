@@ -1,4 +1,4 @@
-package csSpråk;
+package cslang;
 
 /**
  * @author Chanon Borgström
