@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e69ba59a-4ba1-4b4c-8c84-8e5184c2b110" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,22 +26,11 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Facets" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager">
     <configuration name="RunCompiler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -58,7 +46,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -81,34 +69,38 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="385" y="118" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.877@0.23.1440.877" timestamp="1600343750479" />
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1600346742041">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1398" height="230" key="GridCell.Tab.0.bottom" timestamp="1600422350597">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1600346742041" />
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1600346352148" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1600346742039">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1398" height="230" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1600422350597" />
+    <state width="1398" height="230" key="GridCell.Tab.0.center" timestamp="1600422350595">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1600346742039" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1600346352146" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1600346742038">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1398" height="230" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1600422350595" />
+    <state width="1398" height="230" key="GridCell.Tab.0.left" timestamp="1600422350595">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1600346742038" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1600346352144" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1600346742040">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1398" height="230" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1600422350595" />
+    <state width="1398" height="230" key="GridCell.Tab.0.right" timestamp="1600422350596">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1600346742040" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1600346352147" />
-    <state x="208" y="21" key="SettingsEditor" timestamp="1600349210564">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1398" height="230" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1600422350596" />
+    <state x="208" y="43" key="SettingsEditor" timestamp="1600422480270">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="208" y="21" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1600349210564" />
-    <state x="208" y="43" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1600343363369" />
+    <state x="208" y="43" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1600422480270" />
     <state x="443" y="361" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1600343361383">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="443" y="361" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.23.1440.877@0.23.1440.877" timestamp="1600343361383" />
+    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup" timestamp="1600421187733">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1600421187733" />
   </component>
 </project>

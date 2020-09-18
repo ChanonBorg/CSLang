@@ -25,6 +25,8 @@ public class RunCompiler {
         Scanner scan = new Scanner(System.in);
         infile= scan.nextLine();
 
+        CompileCSlang compiler = new CompileCSlang();
+
 
         try {
             ANTLRInputStream inputStream = new ANTLRInputStream(new FileInputStream(infile));
@@ -35,6 +37,14 @@ public class RunCompiler {
 
             ParseTreeWalker walker = new ParseTreeWalker();
             walker.walk(new CompileCSlang(),tree);
+
+            System.out.println("Vad ska den kompilerade filen heta?");
+            Scanner scanner = new Scanner(System.in);
+            outfile = scanner.nextLine();
+
+            Writer writer = new OutputStreamWriter(new FileOutputStream(outfile), "US-ASCII");
+            writer.write(compiler.getCompiledCode());
+            writer.close();
 
 
 

@@ -58,6 +58,16 @@ public interface CSLangListener extends ParseTreeListener {
 	 */
 	void exitAssignment(CSLangParser.AssignmentContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link CSLangParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterExpression(CSLangParser.ExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link CSLangParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitExpression(CSLangParser.ExpressionContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link CSLangParser#addExpression}.
 	 * @param ctx the parse tree
 	 */
@@ -67,6 +77,36 @@ public interface CSLangListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitAddExpression(CSLangParser.AddExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link CSLangParser#unaryExpression}.
+	 * @param ctx the parse tree
+	 */
+	void enterUnaryExpression(CSLangParser.UnaryExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link CSLangParser#unaryExpression}.
+	 * @param ctx the parse tree
+	 */
+	void exitUnaryExpression(CSLangParser.UnaryExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link CSLangParser#sum}.
+	 * @param ctx the parse tree
+	 */
+	void enterSum(CSLangParser.SumContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link CSLangParser#sum}.
+	 * @param ctx the parse tree
+	 */
+	void exitSum(CSLangParser.SumContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link CSLangParser#loop}.
+	 * @param ctx the parse tree
+	 */
+	void enterLoop(CSLangParser.LoopContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link CSLangParser#loop}.
+	 * @param ctx the parse tree
+	 */
+	void exitLoop(CSLangParser.LoopContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link CSLangParser#printout}.
 	 * @param ctx the parse tree

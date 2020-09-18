@@ -11,7 +11,12 @@
 
 cs chanon?
 cs sofia?
+cs ida?
+ida is 1?
 chanon is 27?
 sofia is chanon plus 7?
+
+loop sofia ida plus 1?
+
 write sofia?
 

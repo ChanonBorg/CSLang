@@ -1,41 +1,47 @@
 grammar CSLang;  // Detta är vår lexer med lexer rules
 
 file
-: code EOF
-;
+: code
+| EOF;
+
 code
-: statement '|' code
-;
+: statement '?' code
+| statement '?'; // '?' radavslut.
 
 statement
 : declaration
 | assignment
 | printout
+| sum
 ;
 
 declaration
-: 'cs' ID
-;
+: 'cs' ID;
 
 assignment
-: ID 'is' INT
-| ID 'is' ID
-| ID 'is' addExpression
-;
+: ID 'is' expression;
+
+expression
+: ID
+| INT
+| addExpression;
 
 addExpression
-: ID 'plus' INT
-| ID 'plus' ID
-| INT 'plus' ID
-| INT 'plus' INT
+: unaryExpression 'plus' expression;
+
+unaryExpression
+: ID
+| INT
 ;
+sum
+: loop expression; // deklaration + antal ggr loopen ska köras + värdet som ska loopas + räknare.
+
+loop // hur förstår kompilatorn att den ska loopa?
+: 'loop' expression;
 
 printout
-: 'write' ID
-;
+: 'write' ID;
 
-ID:	('a'..'z''A'..'Z')+;
+ID:	('a'..'z')+;
 INT: ('0'..'9')+ ;
 WS:	[ \n\t\r]+ -> skip ;
-
-// härma i hur man hanterar White space, INT.

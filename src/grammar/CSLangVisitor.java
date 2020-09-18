@@ -41,11 +41,35 @@ public interface CSLangVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitAssignment(CSLangParser.AssignmentContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link CSLangParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExpression(CSLangParser.ExpressionContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link CSLangParser#addExpression}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitAddExpression(CSLangParser.AddExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link CSLangParser#unaryExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitUnaryExpression(CSLangParser.UnaryExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link CSLangParser#sum}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSum(CSLangParser.SumContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link CSLangParser#loop}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLoop(CSLangParser.LoopContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link CSLangParser#printout}.
 	 * @param ctx the parse tree
