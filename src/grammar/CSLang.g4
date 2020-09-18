@@ -1,10 +1,10 @@
-grammar CSLang;
+grammar CSLang;  // Detta är vår lexer med lexer rules
 
 file
 : code EOF
 ;
 code
-: statement '!' code
+: statement '|' code
 ;
 
 statement
@@ -14,27 +14,27 @@ statement
 ;
 
 declaration
-: 'Hallå' ID
+: 'cs' ID
 ;
 
 assignment
-: ID 'är' INT
-| ID 'är' ID
-| ID 'är' addExpression
+: ID 'is' INT
+| ID 'is' ID
+| ID 'is' addExpression
 ;
 
 addExpression
-: ID 'och' INT
-| ID 'och' ID
-| INT 'och' ID
-| INT 'och' INT
+: ID 'plus' INT
+| ID 'plus' ID
+| INT 'plus' ID
+| INT 'plus' INT
 ;
 
 printout
-: 'skriv ut' ID
+: 'write' ID
 ;
 
-ID:	('a'..'z')+ ;
+ID:	('a'..'z''A'..'Z')+;
 INT: ('0'..'9')+ ;
 WS:	[ \n\t\r]+ -> skip ;
 
