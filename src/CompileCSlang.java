@@ -9,7 +9,7 @@ import org.antlr.v4.runtime.tree.TerminalNode;
  * @created 17/09/2020
  * @project CSLang
  */
-public class CompileCSlang extends CSLangBaseListener {
+public class CompileCSLang extends CSLangBaseListener {
 
     StringBuilder builder = new StringBuilder();
 
