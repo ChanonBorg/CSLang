@@ -47,6 +47,12 @@ public interface CSLangVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitExpression(CSLangParser.ExpressionContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link CSLangParser#arithmetic}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitArithmetic(CSLangParser.ArithmeticContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link CSLangParser#addExpression}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -65,11 +71,17 @@ public interface CSLangVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitSum(CSLangParser.SumContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link CSLangParser#loop}.
+	 * Visit a parse tree produced by {@link CSLangParser#startloop}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitLoop(CSLangParser.LoopContext ctx);
+	T visitStartloop(CSLangParser.StartloopContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link CSLangParser#stoploop}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStoploop(CSLangParser.StoploopContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link CSLangParser#printout}.
 	 * @param ctx the parse tree

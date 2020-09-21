@@ -88,14 +88,6 @@ public class CompileCSLang extends CSLangBaseListener {
     public void exitExpression(CSLangParser.ExpressionContext ctx) {
     }
 
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation does nothing.</p>
-     */
-    @Override
-    public void enterAddExpression(CSLangParser.AddExpressionContext ctx) {
-    }
 
     /**
      * {@inheritDoc}
@@ -122,7 +114,7 @@ public class CompileCSLang extends CSLangBaseListener {
             value = ctx.ID().getText();
         }
 
-        builder.append("push " + value+ "\n");
+        builder.append("push " + value + "\n");
         System.out.println("push " + value);
     }
 
@@ -149,24 +141,7 @@ public class CompileCSLang extends CSLangBaseListener {
      *
      * <p>The default implementation does nothing.</p>
      */
-    @Override
-    public void enterLoop(CSLangParser.LoopContext ctx) {
-    }
 
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation does nothing.</p>
-     */
-    @Override
-    public void exitLoop(CSLangParser.LoopContext ctx) {
-    }
-
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation does nothing.</p>
-     */
     @Override
     public void enterPrintout(CSLangParser.PrintoutContext ctx) {
     }
@@ -178,42 +153,48 @@ public class CompileCSLang extends CSLangBaseListener {
      */
     @Override
     public void exitPrintout(CSLangParser.PrintoutContext ctx) {
+        String value = "";
+
+        if (ctx.unaryExpression().ID() == null) {
+            value = ctx.unaryExpression().INT().getText();
+        } else {
+            value = ctx.unaryExpression().ID().getText();
+        }
+
+        builder.append("print " + value + "\n");
+        System.out.println("print " + value);
     }
+
 
     /**
      * {@inheritDoc}
      *
      * <p>The default implementation does nothing.</p>
      */
-    @Override
-    public void enterEveryRule(ParserRuleContext ctx) {
-    }
+    @Override public void enterStartloop(CSLangParser.StartloopContext ctx) {
+        String value ="";
 
+        System.out.println("label enterLoop");
+        builder.append("label enterLoop1");
+    }
     /**
      * {@inheritDoc}
      *
      * <p>The default implementation does nothing.</p>
      */
-    @Override
-    public void exitEveryRule(ParserRuleContext ctx) {
-    }
-
+    @Override public void exitStartloop(CSLangParser.StartloopContext ctx) { }
     /**
      * {@inheritDoc}
      *
      * <p>The default implementation does nothing.</p>
      */
-    @Override
-    public void visitTerminal(TerminalNode node) {
-    }
-
+    @Override public void enterStoploop(CSLangParser.StoploopContext ctx) { }
     /**
      * {@inheritDoc}
      *
      * <p>The default implementation does nothing.</p>
      */
-    @Override
-    public void visitErrorNode(ErrorNode node) {
-    }
+    @Override public void exitStoploop(CSLangParser.StoploopContext ctx) { }
+
 
 }

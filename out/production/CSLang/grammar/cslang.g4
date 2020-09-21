@@ -12,6 +12,8 @@ statement
 : declaration
 | assignment
 | printout
+| startloop
+| stoploop
 | sum
 ;
 
@@ -34,10 +36,13 @@ unaryExpression
 | INT
 ;
 sum
-: loop expression; // deklaration + antal ggr loopen ska köras + värdet som ska loopas + räknare.
+: startloop assignment; // loop + vad som ska loopas
 
-loop // hur förstår kompilatorn att den ska loopa?
-: 'loop' expression;
+startloop // hur förstår kompilatorn att den ska loopa?
+: 'startloop' expression expression; // loop + antal ggr
+
+stoploop
+:'stoploop';
 
 printout
 : 'write' ID;

@@ -88,6 +88,18 @@ public class CSLangBaseListener implements CSLangListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterArithmetic(CSLangParser.ArithmeticContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitArithmetic(CSLangParser.ArithmeticContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterAddExpression(CSLangParser.AddExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -124,13 +136,25 @@ public class CSLangBaseListener implements CSLangListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterLoop(CSLangParser.LoopContext ctx) { }
+	@Override public void enterStartloop(CSLangParser.StartloopContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitLoop(CSLangParser.LoopContext ctx) { }
+	@Override public void exitStartloop(CSLangParser.StartloopContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterStoploop(CSLangParser.StoploopContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitStoploop(CSLangParser.StoploopContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
