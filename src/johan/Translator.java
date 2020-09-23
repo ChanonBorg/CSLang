@@ -31,7 +31,7 @@ public class Translator {
 			System.exit(0);
 		}
 
-		Translator t = new Translator("program/ass1.out", args[1]);
+		Translator t = new Translator("program/ass1.vm", args[1]);
 		t.translateAndSave();
 	}
 
