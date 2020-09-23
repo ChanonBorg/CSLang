@@ -118,14 +118,7 @@ public class CompileCSLang extends CSLangBaseListener {
         System.out.println("push " + value);
     }
 
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation does nothing.</p>
-     */
-    @Override
-    public void enterSum(CSLangParser.SumContext ctx) {
-    }
+
 
     /**
      * {@inheritDoc}
@@ -133,26 +126,7 @@ public class CompileCSLang extends CSLangBaseListener {
      * <p>The default implementation does nothing.</p>
      */
     @Override
-    public void exitSum(CSLangParser.SumContext ctx) {
-    }
-
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation does nothing.</p>
-     */
-
-    @Override
-    public void enterPrintout(CSLangParser.PrintoutContext ctx) {
-    }
-
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation does nothing.</p>
-     */
-    @Override
-    public void exitPrintout(CSLangParser.PrintoutContext ctx) {
+    public void exitPrintOut(CSLangParser.PrintOutContext ctx) {
         String value = "";
 
         if (ctx.unaryExpression().ID() == null) {
@@ -171,30 +145,51 @@ public class CompileCSLang extends CSLangBaseListener {
      *
      * <p>The default implementation does nothing.</p>
      */
-    @Override public void enterStartloop(CSLangParser.StartloopContext ctx) {
-        String value ="";
+    @Override public void enterStartLoop(CSLangParser.StartLoopContext ctx) {
+            System.out.println("label startloop");
+            builder.append("label startloop"+"\n");
+    }
 
-        System.out.println("label enterLoop");
-        builder.append("label enterLoop1");
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation does nothing.</p>
+     */
+    @Override public void exitStartLoop(CSLangParser.StartLoopContext ctx) {
+        String value="";
+        value = "if-goto stoploop";
+
+        System.out.println(value);
+        builder.append(value+"\n");
     }
     /**
      * {@inheritDoc}
      *
      * <p>The default implementation does nothing.</p>
      */
-    @Override public void exitStartloop(CSLangParser.StartloopContext ctx) { }
+    @Override public void enterStopLoop(CSLangParser.StopLoopContext ctx) {
+        String value="";
+        value=ctx.getText();
+
+        System.out.println("goto-startloop");
+        builder.append("goto-startloop"+"\n");
+        System.out.println("label "+value);
+        builder.append("label "+value+"\n");
+    }
     /**
      * {@inheritDoc}
      *
      * <p>The default implementation does nothing.</p>
      */
-    @Override public void enterStoploop(CSLangParser.StoploopContext ctx) { }
+    @Override public void exitStopLoop(CSLangParser.StopLoopContext ctx) { }
+
     /**
      * {@inheritDoc}
      *
      * <p>The default implementation does nothing.</p>
      */
-    @Override public void exitStoploop(CSLangParser.StoploopContext ctx) { }
-
-
+    @Override public void enterComparison(CSLangParser.ComparisonContext ctx) {
+        System.out.println(ctx.getText());
+        builder.append(ctx.getText()+"\n");
+    }
 }

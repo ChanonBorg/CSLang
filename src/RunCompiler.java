@@ -37,13 +37,13 @@ public class RunCompiler {
             ParseTreeWalker walker = new ParseTreeWalker();
             walker.walk(compiler, tree);
 
-//            System.out.println("What should the compiled file be named?");
-//            Scanner scanner = new Scanner(System.in);
-//            outfile = scanner.nextLine();
-//
-//            Writer writer = new OutputStreamWriter(new FileOutputStream(outfile), "US-ASCII");
-//            writer.write(compiler.getCompiledCode());
-//            writer.close();
+            System.out.println("What should the compiled file be named?");
+            Scanner scanner = new Scanner(System.in);
+            outfile = scanner.nextLine();
+
+            Writer writer = new OutputStreamWriter(new FileOutputStream(outfile), "US-ASCII");
+            writer.write(compiler.getCompiledCode());
+            writer.close();
 
 
         } catch (IOException e) {

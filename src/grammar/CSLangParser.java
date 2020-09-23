@@ -1,4 +1,4 @@
-// Generated from /Users/Chanon/Documents/GitHub/CSLang/src/grammar/CSLang.g4 by ANTLR 4.8
+// Generated from C:/Users/sofia/OneDrive/Documents/Systemutveckling och projekt/Projekt/GitHub/CSLang/src/grammar\CSLang.g4 by ANTLR 4.8
 package grammar;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -18,32 +18,32 @@ public class CSLangParser extends Parser {
 		new PredictionContextCache();
 	public static final int
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
-		ID=10, INT=11, WS=12;
+		T__9=10, ID=11, INT=12, WS=13;
 	public static final int
 		RULE_file = 0, RULE_code = 1, RULE_statement = 2, RULE_declaration = 3, 
-		RULE_assignment = 4, RULE_expression = 5, RULE_arithmetic = 6, RULE_addExpression = 7, 
-		RULE_unaryExpression = 8, RULE_sum = 9, RULE_startloop = 10, RULE_stoploop = 11, 
-		RULE_printout = 12;
+		RULE_assignment = 4, RULE_expression = 5, RULE_addExpression = 6, RULE_unaryExpression = 7, 
+		RULE_loop = 8, RULE_startLoop = 9, RULE_stopLoop = 10, RULE_condition = 11, 
+		RULE_comparison = 12, RULE_printOut = 13;
 	private static String[] makeRuleNames() {
 		return new String[] {
 			"file", "code", "statement", "declaration", "assignment", "expression", 
-			"arithmetic", "addExpression", "unaryExpression", "sum", "startloop", 
-			"stoploop", "printout"
+			"addExpression", "unaryExpression", "loop", "startLoop", "stopLoop", 
+			"condition", "comparison", "printOut"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "'?'", "'cs'", "'is'", "'lesst'", "'greatt'", "'plus'", "'startloop'", 
-			"'stoploop'", "'write'"
+			null, "'?'", "'cs'", "'is'", "'plus'", "'solong'", "'stoploop'", "'lt'", 
+			"'gt'", "'eq'", "'write'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, null, null, null, null, null, null, null, null, null, "ID", "INT", 
-			"WS"
+			null, null, null, null, null, null, null, null, null, null, null, "ID", 
+			"INT", "WS"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -125,24 +125,23 @@ public class CSLangParser extends Parser {
 		FileContext _localctx = new FileContext(_ctx, getState());
 		enterRule(_localctx, 0, RULE_file);
 		try {
-			setState(28);
+			setState(30);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__1:
-			case T__6:
-			case T__7:
-			case T__8:
+			case T__4:
+			case T__9:
 			case ID:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(26);
+				setState(28);
 				code();
 				}
 				break;
 			case EOF:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(27);
+				setState(29);
 				match(EOF);
 				}
 				break;
@@ -191,26 +190,26 @@ public class CSLangParser extends Parser {
 		CodeContext _localctx = new CodeContext(_ctx, getState());
 		enterRule(_localctx, 2, RULE_code);
 		try {
-			setState(37);
+			setState(39);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,1,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(30);
-				statement();
-				setState(31);
-				match(T__0);
 				setState(32);
+				statement();
+				setState(33);
+				match(T__0);
+				setState(34);
 				code();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(34);
+				setState(36);
 				statement();
-				setState(35);
+				setState(37);
 				match(T__0);
 				}
 				break;
@@ -234,17 +233,11 @@ public class CSLangParser extends Parser {
 		public AssignmentContext assignment() {
 			return getRuleContext(AssignmentContext.class,0);
 		}
-		public PrintoutContext printout() {
-			return getRuleContext(PrintoutContext.class,0);
+		public PrintOutContext printOut() {
+			return getRuleContext(PrintOutContext.class,0);
 		}
-		public StartloopContext startloop() {
-			return getRuleContext(StartloopContext.class,0);
-		}
-		public StoploopContext stoploop() {
-			return getRuleContext(StoploopContext.class,0);
-		}
-		public SumContext sum() {
-			return getRuleContext(SumContext.class,0);
+		public LoopContext loop() {
+			return getRuleContext(LoopContext.class,0);
 		}
 		public StatementContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -271,49 +264,37 @@ public class CSLangParser extends Parser {
 		try {
 			setState(45);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,2,_ctx) ) {
-			case 1:
+			switch (_input.LA(1)) {
+			case T__1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(39);
+				setState(41);
 				declaration();
 				}
 				break;
-			case 2:
+			case ID:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(40);
+				setState(42);
 				assignment();
 				}
 				break;
-			case 3:
+			case T__9:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(41);
-				printout();
+				setState(43);
+				printOut();
 				}
 				break;
-			case 4:
+			case T__4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(42);
-				startloop();
-				}
-				break;
-			case 5:
-				enterOuterAlt(_localctx, 5);
-				{
-				setState(43);
-				stoploop();
-				}
-				break;
-			case 6:
-				enterOuterAlt(_localctx, 6);
-				{
 				setState(44);
-				sum();
+				loop();
 				}
 				break;
+			default:
+				throw new NoViableAltException(this);
 			}
 		}
 		catch (RecognitionException re) {
@@ -421,8 +402,9 @@ public class CSLangParser extends Parser {
 	}
 
 	public static class ExpressionContext extends ParserRuleContext {
-		public TerminalNode ID() { return getToken(CSLangParser.ID, 0); }
-		public TerminalNode INT() { return getToken(CSLangParser.INT, 0); }
+		public UnaryExpressionContext unaryExpression() {
+			return getRuleContext(UnaryExpressionContext.class,0);
+		}
 		public AddExpressionContext addExpression() {
 			return getRuleContext(AddExpressionContext.class,0);
 		}
@@ -449,80 +431,23 @@ public class CSLangParser extends Parser {
 		ExpressionContext _localctx = new ExpressionContext(_ctx, getState());
 		enterRule(_localctx, 10, RULE_expression);
 		try {
-			setState(57);
+			setState(56);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,3,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(54);
-				match(ID);
+				unaryExpression();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
 				setState(55);
-				match(INT);
-				}
-				break;
-			case 3:
-				enterOuterAlt(_localctx, 3);
-				{
-				setState(56);
 				addExpression();
 				}
 				break;
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class ArithmeticContext extends ParserRuleContext {
-		public ArithmeticContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_arithmetic; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CSLangListener ) ((CSLangListener)listener).enterArithmetic(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CSLangListener ) ((CSLangListener)listener).exitArithmetic(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof CSLangVisitor ) return ((CSLangVisitor<? extends T>)visitor).visitArithmetic(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final ArithmeticContext arithmetic() throws RecognitionException {
-		ArithmeticContext _localctx = new ArithmeticContext(_ctx, getState());
-		enterRule(_localctx, 12, RULE_arithmetic);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(59);
-			_la = _input.LA(1);
-			if ( !(_la==T__3 || _la==T__4) ) {
-			_errHandler.recoverInline(this);
-			}
-			else {
-				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-				_errHandler.reportMatch(this);
-				consume();
-			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -564,15 +489,15 @@ public class CSLangParser extends Parser {
 
 	public final AddExpressionContext addExpression() throws RecognitionException {
 		AddExpressionContext _localctx = new AddExpressionContext(_ctx, getState());
-		enterRule(_localctx, 14, RULE_addExpression);
+		enterRule(_localctx, 12, RULE_addExpression);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(61);
+			setState(58);
 			unaryExpression();
-			setState(62);
-			match(T__5);
-			setState(63);
+			setState(59);
+			match(T__3);
+			setState(60);
 			expression();
 			}
 		}
@@ -611,12 +536,12 @@ public class CSLangParser extends Parser {
 
 	public final UnaryExpressionContext unaryExpression() throws RecognitionException {
 		UnaryExpressionContext _localctx = new UnaryExpressionContext(_ctx, getState());
-		enterRule(_localctx, 16, RULE_unaryExpression);
+		enterRule(_localctx, 14, RULE_unaryExpression);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(65);
+			setState(62);
 			_la = _input.LA(1);
 			if ( !(_la==ID || _la==INT) ) {
 			_errHandler.recoverInline(this);
@@ -639,42 +564,47 @@ public class CSLangParser extends Parser {
 		return _localctx;
 	}
 
-	public static class SumContext extends ParserRuleContext {
-		public StartloopContext startloop() {
-			return getRuleContext(StartloopContext.class,0);
+	public static class LoopContext extends ParserRuleContext {
+		public StartLoopContext startLoop() {
+			return getRuleContext(StartLoopContext.class,0);
 		}
-		public AssignmentContext assignment() {
-			return getRuleContext(AssignmentContext.class,0);
+		public CodeContext code() {
+			return getRuleContext(CodeContext.class,0);
 		}
-		public SumContext(ParserRuleContext parent, int invokingState) {
+		public StopLoopContext stopLoop() {
+			return getRuleContext(StopLoopContext.class,0);
+		}
+		public LoopContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_sum; }
+		@Override public int getRuleIndex() { return RULE_loop; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CSLangListener ) ((CSLangListener)listener).enterSum(this);
+			if ( listener instanceof CSLangListener ) ((CSLangListener)listener).enterLoop(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CSLangListener ) ((CSLangListener)listener).exitSum(this);
+			if ( listener instanceof CSLangListener ) ((CSLangListener)listener).exitLoop(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof CSLangVisitor ) return ((CSLangVisitor<? extends T>)visitor).visitSum(this);
+			if ( visitor instanceof CSLangVisitor ) return ((CSLangVisitor<? extends T>)visitor).visitLoop(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final SumContext sum() throws RecognitionException {
-		SumContext _localctx = new SumContext(_ctx, getState());
-		enterRule(_localctx, 18, RULE_sum);
+	public final LoopContext loop() throws RecognitionException {
+		LoopContext _localctx = new LoopContext(_ctx, getState());
+		enterRule(_localctx, 16, RULE_loop);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(67);
-			startloop();
-			setState(68);
-			assignment();
+			setState(64);
+			startLoop();
+			setState(65);
+			code();
+			setState(66);
+			stopLoop();
 			}
 		}
 		catch (RecognitionException re) {
@@ -688,90 +618,134 @@ public class CSLangParser extends Parser {
 		return _localctx;
 	}
 
-	public static class StartloopContext extends ParserRuleContext {
+	public static class StartLoopContext extends ParserRuleContext {
+		public ConditionContext condition() {
+			return getRuleContext(ConditionContext.class,0);
+		}
+		public StartLoopContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_startLoop; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CSLangListener ) ((CSLangListener)listener).enterStartLoop(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CSLangListener ) ((CSLangListener)listener).exitStartLoop(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof CSLangVisitor ) return ((CSLangVisitor<? extends T>)visitor).visitStartLoop(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final StartLoopContext startLoop() throws RecognitionException {
+		StartLoopContext _localctx = new StartLoopContext(_ctx, getState());
+		enterRule(_localctx, 18, RULE_startLoop);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(68);
+			match(T__4);
+			setState(69);
+			condition();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class StopLoopContext extends ParserRuleContext {
+		public StopLoopContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_stopLoop; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CSLangListener ) ((CSLangListener)listener).enterStopLoop(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CSLangListener ) ((CSLangListener)listener).exitStopLoop(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof CSLangVisitor ) return ((CSLangVisitor<? extends T>)visitor).visitStopLoop(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final StopLoopContext stopLoop() throws RecognitionException {
+		StopLoopContext _localctx = new StopLoopContext(_ctx, getState());
+		enterRule(_localctx, 20, RULE_stopLoop);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(71);
+			match(T__5);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class ConditionContext extends ParserRuleContext {
 		public List<UnaryExpressionContext> unaryExpression() {
 			return getRuleContexts(UnaryExpressionContext.class);
 		}
 		public UnaryExpressionContext unaryExpression(int i) {
 			return getRuleContext(UnaryExpressionContext.class,i);
 		}
-		public ArithmeticContext arithmetic() {
-			return getRuleContext(ArithmeticContext.class,0);
+		public ComparisonContext comparison() {
+			return getRuleContext(ComparisonContext.class,0);
 		}
-		public StartloopContext(ParserRuleContext parent, int invokingState) {
+		public ConditionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_startloop; }
+		@Override public int getRuleIndex() { return RULE_condition; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CSLangListener ) ((CSLangListener)listener).enterStartloop(this);
+			if ( listener instanceof CSLangListener ) ((CSLangListener)listener).enterCondition(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CSLangListener ) ((CSLangListener)listener).exitStartloop(this);
+			if ( listener instanceof CSLangListener ) ((CSLangListener)listener).exitCondition(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof CSLangVisitor ) return ((CSLangVisitor<? extends T>)visitor).visitStartloop(this);
+			if ( visitor instanceof CSLangVisitor ) return ((CSLangVisitor<? extends T>)visitor).visitCondition(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final StartloopContext startloop() throws RecognitionException {
-		StartloopContext _localctx = new StartloopContext(_ctx, getState());
-		enterRule(_localctx, 20, RULE_startloop);
+	public final ConditionContext condition() throws RecognitionException {
+		ConditionContext _localctx = new ConditionContext(_ctx, getState());
+		enterRule(_localctx, 22, RULE_condition);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(70);
-			match(T__6);
-			setState(71);
-			unaryExpression();
-			setState(72);
-			arithmetic();
 			setState(73);
 			unaryExpression();
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class StoploopContext extends ParserRuleContext {
-		public StoploopContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_stoploop; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CSLangListener ) ((CSLangListener)listener).enterStoploop(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CSLangListener ) ((CSLangListener)listener).exitStoploop(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof CSLangVisitor ) return ((CSLangVisitor<? extends T>)visitor).visitStoploop(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final StoploopContext stoploop() throws RecognitionException {
-		StoploopContext _localctx = new StoploopContext(_ctx, getState());
-		enterRule(_localctx, 22, RULE_stoploop);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
+			setState(74);
+			unaryExpression();
 			setState(75);
-			match(T__7);
+			comparison();
 			}
 		}
 		catch (RecognitionException re) {
@@ -785,38 +759,88 @@ public class CSLangParser extends Parser {
 		return _localctx;
 	}
 
-	public static class PrintoutContext extends ParserRuleContext {
-		public UnaryExpressionContext unaryExpression() {
-			return getRuleContext(UnaryExpressionContext.class,0);
-		}
-		public PrintoutContext(ParserRuleContext parent, int invokingState) {
+	public static class ComparisonContext extends ParserRuleContext {
+		public ComparisonContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_printout; }
+		@Override public int getRuleIndex() { return RULE_comparison; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CSLangListener ) ((CSLangListener)listener).enterPrintout(this);
+			if ( listener instanceof CSLangListener ) ((CSLangListener)listener).enterComparison(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CSLangListener ) ((CSLangListener)listener).exitPrintout(this);
+			if ( listener instanceof CSLangListener ) ((CSLangListener)listener).exitComparison(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof CSLangVisitor ) return ((CSLangVisitor<? extends T>)visitor).visitPrintout(this);
+			if ( visitor instanceof CSLangVisitor ) return ((CSLangVisitor<? extends T>)visitor).visitComparison(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final PrintoutContext printout() throws RecognitionException {
-		PrintoutContext _localctx = new PrintoutContext(_ctx, getState());
-		enterRule(_localctx, 24, RULE_printout);
+	public final ComparisonContext comparison() throws RecognitionException {
+		ComparisonContext _localctx = new ComparisonContext(_ctx, getState());
+		enterRule(_localctx, 24, RULE_comparison);
+		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(77);
-			match(T__8);
-			setState(78);
+			_la = _input.LA(1);
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__6) | (1L << T__7) | (1L << T__8))) != 0)) ) {
+			_errHandler.recoverInline(this);
+			}
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class PrintOutContext extends ParserRuleContext {
+		public UnaryExpressionContext unaryExpression() {
+			return getRuleContext(UnaryExpressionContext.class,0);
+		}
+		public PrintOutContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_printOut; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CSLangListener ) ((CSLangListener)listener).enterPrintOut(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CSLangListener ) ((CSLangListener)listener).exitPrintOut(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof CSLangVisitor ) return ((CSLangVisitor<? extends T>)visitor).visitPrintOut(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final PrintOutContext printOut() throws RecognitionException {
+		PrintOutContext _localctx = new PrintOutContext(_ctx, getState());
+		enterRule(_localctx, 26, RULE_printOut);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(79);
+			match(T__9);
+			setState(80);
 			unaryExpression();
 			}
 		}
@@ -832,26 +856,26 @@ public class CSLangParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\16S\4\2\t\2\4\3\t"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\17U\4\2\t\2\4\3\t"+
 		"\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4"+
-		"\f\t\f\4\r\t\r\4\16\t\16\3\2\3\2\5\2\37\n\2\3\3\3\3\3\3\3\3\3\3\3\3\3"+
-		"\3\5\3(\n\3\3\4\3\4\3\4\3\4\3\4\3\4\5\4\60\n\4\3\5\3\5\3\5\3\6\3\6\3\6"+
-		"\3\6\3\7\3\7\3\7\5\7<\n\7\3\b\3\b\3\t\3\t\3\t\3\t\3\n\3\n\3\13\3\13\3"+
-		"\13\3\f\3\f\3\f\3\f\3\f\3\r\3\r\3\16\3\16\3\16\3\16\2\2\17\2\4\6\b\n\f"+
-		"\16\20\22\24\26\30\32\2\4\3\2\6\7\3\2\f\r\2N\2\36\3\2\2\2\4\'\3\2\2\2"+
-		"\6/\3\2\2\2\b\61\3\2\2\2\n\64\3\2\2\2\f;\3\2\2\2\16=\3\2\2\2\20?\3\2\2"+
-		"\2\22C\3\2\2\2\24E\3\2\2\2\26H\3\2\2\2\30M\3\2\2\2\32O\3\2\2\2\34\37\5"+
-		"\4\3\2\35\37\7\2\2\3\36\34\3\2\2\2\36\35\3\2\2\2\37\3\3\2\2\2 !\5\6\4"+
-		"\2!\"\7\3\2\2\"#\5\4\3\2#(\3\2\2\2$%\5\6\4\2%&\7\3\2\2&(\3\2\2\2\' \3"+
-		"\2\2\2\'$\3\2\2\2(\5\3\2\2\2)\60\5\b\5\2*\60\5\n\6\2+\60\5\32\16\2,\60"+
-		"\5\26\f\2-\60\5\30\r\2.\60\5\24\13\2/)\3\2\2\2/*\3\2\2\2/+\3\2\2\2/,\3"+
-		"\2\2\2/-\3\2\2\2/.\3\2\2\2\60\7\3\2\2\2\61\62\7\4\2\2\62\63\7\f\2\2\63"+
-		"\t\3\2\2\2\64\65\7\f\2\2\65\66\7\5\2\2\66\67\5\f\7\2\67\13\3\2\2\28<\7"+
-		"\f\2\29<\7\r\2\2:<\5\20\t\2;8\3\2\2\2;9\3\2\2\2;:\3\2\2\2<\r\3\2\2\2="+
-		">\t\2\2\2>\17\3\2\2\2?@\5\22\n\2@A\7\b\2\2AB\5\f\7\2B\21\3\2\2\2CD\t\3"+
-		"\2\2D\23\3\2\2\2EF\5\26\f\2FG\5\n\6\2G\25\3\2\2\2HI\7\t\2\2IJ\5\22\n\2"+
-		"JK\5\16\b\2KL\5\22\n\2L\27\3\2\2\2MN\7\n\2\2N\31\3\2\2\2OP\7\13\2\2PQ"+
-		"\5\22\n\2Q\33\3\2\2\2\6\36\'/;";
+		"\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\3\2\3\2\5\2!\n\2\3\3\3\3\3\3\3\3\3"+
+		"\3\3\3\3\3\5\3*\n\3\3\4\3\4\3\4\3\4\5\4\60\n\4\3\5\3\5\3\5\3\6\3\6\3\6"+
+		"\3\6\3\7\3\7\5\7;\n\7\3\b\3\b\3\b\3\b\3\t\3\t\3\n\3\n\3\n\3\n\3\13\3\13"+
+		"\3\13\3\f\3\f\3\r\3\r\3\r\3\r\3\16\3\16\3\17\3\17\3\17\3\17\2\2\20\2\4"+
+		"\6\b\n\f\16\20\22\24\26\30\32\34\2\4\3\2\r\16\3\2\t\13\2L\2 \3\2\2\2\4"+
+		")\3\2\2\2\6/\3\2\2\2\b\61\3\2\2\2\n\64\3\2\2\2\f:\3\2\2\2\16<\3\2\2\2"+
+		"\20@\3\2\2\2\22B\3\2\2\2\24F\3\2\2\2\26I\3\2\2\2\30K\3\2\2\2\32O\3\2\2"+
+		"\2\34Q\3\2\2\2\36!\5\4\3\2\37!\7\2\2\3 \36\3\2\2\2 \37\3\2\2\2!\3\3\2"+
+		"\2\2\"#\5\6\4\2#$\7\3\2\2$%\5\4\3\2%*\3\2\2\2&\'\5\6\4\2\'(\7\3\2\2(*"+
+		"\3\2\2\2)\"\3\2\2\2)&\3\2\2\2*\5\3\2\2\2+\60\5\b\5\2,\60\5\n\6\2-\60\5"+
+		"\34\17\2.\60\5\22\n\2/+\3\2\2\2/,\3\2\2\2/-\3\2\2\2/.\3\2\2\2\60\7\3\2"+
+		"\2\2\61\62\7\4\2\2\62\63\7\r\2\2\63\t\3\2\2\2\64\65\7\r\2\2\65\66\7\5"+
+		"\2\2\66\67\5\f\7\2\67\13\3\2\2\28;\5\20\t\29;\5\16\b\2:8\3\2\2\2:9\3\2"+
+		"\2\2;\r\3\2\2\2<=\5\20\t\2=>\7\6\2\2>?\5\f\7\2?\17\3\2\2\2@A\t\2\2\2A"+
+		"\21\3\2\2\2BC\5\24\13\2CD\5\4\3\2DE\5\26\f\2E\23\3\2\2\2FG\7\7\2\2GH\5"+
+		"\30\r\2H\25\3\2\2\2IJ\7\b\2\2J\27\3\2\2\2KL\5\20\t\2LM\5\20\t\2MN\5\32"+
+		"\16\2N\31\3\2\2\2OP\t\3\2\2P\33\3\2\2\2QR\7\f\2\2RS\5\20\t\2S\35\3\2\2"+
+		"\2\6 )/:";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

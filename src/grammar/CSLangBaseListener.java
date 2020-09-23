@@ -1,4 +1,4 @@
-// Generated from /Users/Chanon/Documents/GitHub/CSLang/src/grammar/CSLang.g4 by ANTLR 4.8
+// Generated from C:/Users/sofia/OneDrive/Documents/Systemutveckling och projekt/Projekt/GitHub/CSLang/src/grammar\CSLang.g4 by ANTLR 4.8
 package grammar;
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -88,18 +88,6 @@ public class CSLangBaseListener implements CSLangListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterArithmetic(CSLangParser.ArithmeticContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitArithmetic(CSLangParser.ArithmeticContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterAddExpression(CSLangParser.AddExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -124,49 +112,73 @@ public class CSLangBaseListener implements CSLangListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSum(CSLangParser.SumContext ctx) { }
+	@Override public void enterLoop(CSLangParser.LoopContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSum(CSLangParser.SumContext ctx) { }
+	@Override public void exitLoop(CSLangParser.LoopContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterStartloop(CSLangParser.StartloopContext ctx) { }
+	@Override public void enterStartLoop(CSLangParser.StartLoopContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitStartloop(CSLangParser.StartloopContext ctx) { }
+	@Override public void exitStartLoop(CSLangParser.StartLoopContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterStoploop(CSLangParser.StoploopContext ctx) { }
+	@Override public void enterStopLoop(CSLangParser.StopLoopContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitStoploop(CSLangParser.StoploopContext ctx) { }
+	@Override public void exitStopLoop(CSLangParser.StopLoopContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPrintout(CSLangParser.PrintoutContext ctx) { }
+	@Override public void enterCondition(CSLangParser.ConditionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitPrintout(CSLangParser.PrintoutContext ctx) { }
+	@Override public void exitCondition(CSLangParser.ConditionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterComparison(CSLangParser.ComparisonContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitComparison(CSLangParser.ComparisonContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterPrintOut(CSLangParser.PrintOutContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitPrintOut(CSLangParser.PrintOutContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

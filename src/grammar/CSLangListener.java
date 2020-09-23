@@ -1,4 +1,4 @@
-// Generated from /Users/Chanon/Documents/GitHub/CSLang/src/grammar/CSLang.g4 by ANTLR 4.8
+// Generated from C:/Users/sofia/OneDrive/Documents/Systemutveckling och projekt/Projekt/GitHub/CSLang/src/grammar\CSLang.g4 by ANTLR 4.8
 package grammar;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -68,16 +68,6 @@ public interface CSLangListener extends ParseTreeListener {
 	 */
 	void exitExpression(CSLangParser.ExpressionContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link CSLangParser#arithmetic}.
-	 * @param ctx the parse tree
-	 */
-	void enterArithmetic(CSLangParser.ArithmeticContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link CSLangParser#arithmetic}.
-	 * @param ctx the parse tree
-	 */
-	void exitArithmetic(CSLangParser.ArithmeticContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link CSLangParser#addExpression}.
 	 * @param ctx the parse tree
 	 */
@@ -98,43 +88,63 @@ public interface CSLangListener extends ParseTreeListener {
 	 */
 	void exitUnaryExpression(CSLangParser.UnaryExpressionContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link CSLangParser#sum}.
+	 * Enter a parse tree produced by {@link CSLangParser#loop}.
 	 * @param ctx the parse tree
 	 */
-	void enterSum(CSLangParser.SumContext ctx);
+	void enterLoop(CSLangParser.LoopContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link CSLangParser#sum}.
+	 * Exit a parse tree produced by {@link CSLangParser#loop}.
 	 * @param ctx the parse tree
 	 */
-	void exitSum(CSLangParser.SumContext ctx);
+	void exitLoop(CSLangParser.LoopContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link CSLangParser#startloop}.
+	 * Enter a parse tree produced by {@link CSLangParser#startLoop}.
 	 * @param ctx the parse tree
 	 */
-	void enterStartloop(CSLangParser.StartloopContext ctx);
+	void enterStartLoop(CSLangParser.StartLoopContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link CSLangParser#startloop}.
+	 * Exit a parse tree produced by {@link CSLangParser#startLoop}.
 	 * @param ctx the parse tree
 	 */
-	void exitStartloop(CSLangParser.StartloopContext ctx);
+	void exitStartLoop(CSLangParser.StartLoopContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link CSLangParser#stoploop}.
+	 * Enter a parse tree produced by {@link CSLangParser#stopLoop}.
 	 * @param ctx the parse tree
 	 */
-	void enterStoploop(CSLangParser.StoploopContext ctx);
+	void enterStopLoop(CSLangParser.StopLoopContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link CSLangParser#stoploop}.
+	 * Exit a parse tree produced by {@link CSLangParser#stopLoop}.
 	 * @param ctx the parse tree
 	 */
-	void exitStoploop(CSLangParser.StoploopContext ctx);
+	void exitStopLoop(CSLangParser.StopLoopContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link CSLangParser#printout}.
+	 * Enter a parse tree produced by {@link CSLangParser#condition}.
 	 * @param ctx the parse tree
 	 */
-	void enterPrintout(CSLangParser.PrintoutContext ctx);
+	void enterCondition(CSLangParser.ConditionContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link CSLangParser#printout}.
+	 * Exit a parse tree produced by {@link CSLangParser#condition}.
 	 * @param ctx the parse tree
 	 */
-	void exitPrintout(CSLangParser.PrintoutContext ctx);
+	void exitCondition(CSLangParser.ConditionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link CSLangParser#comparison}.
+	 * @param ctx the parse tree
+	 */
+	void enterComparison(CSLangParser.ComparisonContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link CSLangParser#comparison}.
+	 * @param ctx the parse tree
+	 */
+	void exitComparison(CSLangParser.ComparisonContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link CSLangParser#printOut}.
+	 * @param ctx the parse tree
+	 */
+	void enterPrintOut(CSLangParser.PrintOutContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link CSLangParser#printOut}.
+	 * @param ctx the parse tree
+	 */
+	void exitPrintOut(CSLangParser.PrintOutContext ctx);
 }

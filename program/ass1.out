@@ -1,0 +1,19 @@
+push 1
+pop count
+push 0
+pop sum
+label startloop
+push count
+push 10
+lt
+if-goto stoploop
+push sum
+push count
+pop sum
+push count
+push 1
+pop count
+goto-startloop
+label stoploop
+push sum
+print sum

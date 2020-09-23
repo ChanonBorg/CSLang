@@ -1,4 +1,4 @@
-// Generated from /Users/Chanon/Documents/GitHub/CSLang/src/grammar/CSLang.g4 by ANTLR 4.8
+// Generated from C:/Users/sofia/OneDrive/Documents/Systemutveckling och projekt/Projekt/GitHub/CSLang/src/grammar\CSLang.g4 by ANTLR 4.8
 package grammar;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
@@ -47,12 +47,6 @@ public interface CSLangVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitExpression(CSLangParser.ExpressionContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link CSLangParser#arithmetic}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitArithmetic(CSLangParser.ArithmeticContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link CSLangParser#addExpression}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -65,27 +59,39 @@ public interface CSLangVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitUnaryExpression(CSLangParser.UnaryExpressionContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link CSLangParser#sum}.
+	 * Visit a parse tree produced by {@link CSLangParser#loop}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitSum(CSLangParser.SumContext ctx);
+	T visitLoop(CSLangParser.LoopContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link CSLangParser#startloop}.
+	 * Visit a parse tree produced by {@link CSLangParser#startLoop}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitStartloop(CSLangParser.StartloopContext ctx);
+	T visitStartLoop(CSLangParser.StartLoopContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link CSLangParser#stoploop}.
+	 * Visit a parse tree produced by {@link CSLangParser#stopLoop}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitStoploop(CSLangParser.StoploopContext ctx);
+	T visitStopLoop(CSLangParser.StopLoopContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link CSLangParser#printout}.
+	 * Visit a parse tree produced by {@link CSLangParser#condition}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitPrintout(CSLangParser.PrintoutContext ctx);
+	T visitCondition(CSLangParser.ConditionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link CSLangParser#comparison}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitComparison(CSLangParser.ComparisonContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link CSLangParser#printOut}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPrintOut(CSLangParser.PrintOutContext ctx);
 }
