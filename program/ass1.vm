@@ -9,10 +9,12 @@ eq
 if-goto stoploop
 push sum
 push count
-addpop sum
+add
+pop sum
 push count
 push 1
-addpop count
+add
+pop count
 goto startloop
 label stoploop
 push sum

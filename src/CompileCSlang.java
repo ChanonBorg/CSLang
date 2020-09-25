@@ -97,7 +97,7 @@ public class CompileCSLang extends CSLangBaseListener {
     @Override
     public void exitAddExpression(CSLangParser.AddExpressionContext ctx) {
         System.out.println("add");
-        builder.append("add");
+        builder.append("add\n");
     }
 
     /**
