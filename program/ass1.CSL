@@ -2,7 +2,7 @@ cs count?
 cs sum?
 count is 1?
 sum is 0?
-solong count 10 lt
+solong count 10 eq
 sum is sum plus count?
 count is count plus 1?
 stoploop?
