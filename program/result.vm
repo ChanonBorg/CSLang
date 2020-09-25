@@ -1,0 +1,21 @@
+  push constant 0
+  pop static 0
+  push constant 0
+  pop static 1
+label startloop
+  push static 0
+  push constant 3
+eq
+if-goto stoploop
+  push static 0
+  push constant 1
+add
+  pop static 0
+  push static 1
+  push static 0
+add
+  pop static 1
+goto startloop
+label stoploop
+  push static 1
+  pop that 16384

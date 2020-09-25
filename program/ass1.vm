@@ -1,4 +1,4 @@
-push 1
+push 0
 pop count
 push 0
 pop sum
@@ -7,14 +7,14 @@ push count
 push 3
 eq
 if-goto stoploop
-push sum
-push count
-add
-pop sum
 push count
 push 1
 add
 pop count
+push sum
+push count
+add
+pop sum
 goto startloop
 label stoploop
 print sum
