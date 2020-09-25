@@ -51,7 +51,8 @@ comparison
 | 'eq';
 
 printOut
-: 'write' unaryExpression;
+: 'write' ID
+| 'wite' INT;
 
 ID:	('a'..'z')+;
 INT: ('0'..'9')+ ;

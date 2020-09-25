@@ -17,5 +17,4 @@ add
 pop count
 goto startloop
 label stoploop
-push sum
 print sum

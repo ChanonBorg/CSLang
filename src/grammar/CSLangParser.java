@@ -18,7 +18,7 @@ public class CSLangParser extends Parser {
 		new PredictionContextCache();
 	public static final int
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
-		T__9=10, ID=11, INT=12, WS=13;
+		T__9=10, T__10=11, ID=12, INT=13, WS=14;
 	public static final int
 		RULE_file = 0, RULE_code = 1, RULE_statement = 2, RULE_declaration = 3, 
 		RULE_assignment = 4, RULE_expression = 5, RULE_addExpression = 6, RULE_unaryExpression = 7, 
@@ -36,14 +36,14 @@ public class CSLangParser extends Parser {
 	private static String[] makeLiteralNames() {
 		return new String[] {
 			null, "'?'", "'cs'", "'is'", "'plus'", "'solong'", "'stoploop'", "'lt'", 
-			"'gt'", "'eq'", "'write'"
+			"'gt'", "'eq'", "'write'", "'wite'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, null, null, null, null, null, null, null, null, null, null, "ID", 
-			"INT", "WS"
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			"ID", "INT", "WS"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -131,6 +131,7 @@ public class CSLangParser extends Parser {
 			case T__1:
 			case T__4:
 			case T__9:
+			case T__10:
 			case ID:
 				enterOuterAlt(_localctx, 1);
 				{
@@ -280,6 +281,7 @@ public class CSLangParser extends Parser {
 				}
 				break;
 			case T__9:
+			case T__10:
 				enterOuterAlt(_localctx, 3);
 				{
 				setState(43);
@@ -810,9 +812,8 @@ public class CSLangParser extends Parser {
 	}
 
 	public static class PrintOutContext extends ParserRuleContext {
-		public UnaryExpressionContext unaryExpression() {
-			return getRuleContext(UnaryExpressionContext.class,0);
-		}
+		public TerminalNode ID() { return getToken(CSLangParser.ID, 0); }
+		public TerminalNode INT() { return getToken(CSLangParser.INT, 0); }
 		public PrintOutContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -836,12 +837,29 @@ public class CSLangParser extends Parser {
 		PrintOutContext _localctx = new PrintOutContext(_ctx, getState());
 		enterRule(_localctx, 26, RULE_printOut);
 		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(79);
-			match(T__9);
-			setState(80);
-			unaryExpression();
+			setState(83);
+			_errHandler.sync(this);
+			switch (_input.LA(1)) {
+			case T__9:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(79);
+				match(T__9);
+				setState(80);
+				match(ID);
+				}
+				break;
+			case T__10:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(81);
+				match(T__10);
+				setState(82);
+				match(INT);
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
 			}
 		}
 		catch (RecognitionException re) {
@@ -856,26 +874,26 @@ public class CSLangParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\17U\4\2\t\2\4\3\t"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\20X\4\2\t\2\4\3\t"+
 		"\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4"+
 		"\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\3\2\3\2\5\2!\n\2\3\3\3\3\3\3\3\3\3"+
 		"\3\3\3\3\3\5\3*\n\3\3\4\3\4\3\4\3\4\5\4\60\n\4\3\5\3\5\3\5\3\6\3\6\3\6"+
 		"\3\6\3\7\3\7\5\7;\n\7\3\b\3\b\3\b\3\b\3\t\3\t\3\n\3\n\3\n\3\n\3\13\3\13"+
-		"\3\13\3\f\3\f\3\r\3\r\3\r\3\r\3\16\3\16\3\17\3\17\3\17\3\17\2\2\20\2\4"+
-		"\6\b\n\f\16\20\22\24\26\30\32\34\2\4\3\2\r\16\3\2\t\13\2L\2 \3\2\2\2\4"+
-		")\3\2\2\2\6/\3\2\2\2\b\61\3\2\2\2\n\64\3\2\2\2\f:\3\2\2\2\16<\3\2\2\2"+
-		"\20@\3\2\2\2\22B\3\2\2\2\24F\3\2\2\2\26I\3\2\2\2\30K\3\2\2\2\32O\3\2\2"+
-		"\2\34Q\3\2\2\2\36!\5\4\3\2\37!\7\2\2\3 \36\3\2\2\2 \37\3\2\2\2!\3\3\2"+
-		"\2\2\"#\5\6\4\2#$\7\3\2\2$%\5\4\3\2%*\3\2\2\2&\'\5\6\4\2\'(\7\3\2\2(*"+
-		"\3\2\2\2)\"\3\2\2\2)&\3\2\2\2*\5\3\2\2\2+\60\5\b\5\2,\60\5\n\6\2-\60\5"+
-		"\34\17\2.\60\5\22\n\2/+\3\2\2\2/,\3\2\2\2/-\3\2\2\2/.\3\2\2\2\60\7\3\2"+
-		"\2\2\61\62\7\4\2\2\62\63\7\r\2\2\63\t\3\2\2\2\64\65\7\r\2\2\65\66\7\5"+
-		"\2\2\66\67\5\f\7\2\67\13\3\2\2\28;\5\20\t\29;\5\16\b\2:8\3\2\2\2:9\3\2"+
-		"\2\2;\r\3\2\2\2<=\5\20\t\2=>\7\6\2\2>?\5\f\7\2?\17\3\2\2\2@A\t\2\2\2A"+
-		"\21\3\2\2\2BC\5\24\13\2CD\5\4\3\2DE\5\26\f\2E\23\3\2\2\2FG\7\7\2\2GH\5"+
-		"\30\r\2H\25\3\2\2\2IJ\7\b\2\2J\27\3\2\2\2KL\5\20\t\2LM\5\20\t\2MN\5\32"+
-		"\16\2N\31\3\2\2\2OP\t\3\2\2P\33\3\2\2\2QR\7\f\2\2RS\5\20\t\2S\35\3\2\2"+
-		"\2\6 )/:";
+		"\3\13\3\f\3\f\3\r\3\r\3\r\3\r\3\16\3\16\3\17\3\17\3\17\3\17\5\17V\n\17"+
+		"\3\17\2\2\20\2\4\6\b\n\f\16\20\22\24\26\30\32\34\2\4\3\2\16\17\3\2\t\13"+
+		"\2P\2 \3\2\2\2\4)\3\2\2\2\6/\3\2\2\2\b\61\3\2\2\2\n\64\3\2\2\2\f:\3\2"+
+		"\2\2\16<\3\2\2\2\20@\3\2\2\2\22B\3\2\2\2\24F\3\2\2\2\26I\3\2\2\2\30K\3"+
+		"\2\2\2\32O\3\2\2\2\34U\3\2\2\2\36!\5\4\3\2\37!\7\2\2\3 \36\3\2\2\2 \37"+
+		"\3\2\2\2!\3\3\2\2\2\"#\5\6\4\2#$\7\3\2\2$%\5\4\3\2%*\3\2\2\2&\'\5\6\4"+
+		"\2\'(\7\3\2\2(*\3\2\2\2)\"\3\2\2\2)&\3\2\2\2*\5\3\2\2\2+\60\5\b\5\2,\60"+
+		"\5\n\6\2-\60\5\34\17\2.\60\5\22\n\2/+\3\2\2\2/,\3\2\2\2/-\3\2\2\2/.\3"+
+		"\2\2\2\60\7\3\2\2\2\61\62\7\4\2\2\62\63\7\16\2\2\63\t\3\2\2\2\64\65\7"+
+		"\16\2\2\65\66\7\5\2\2\66\67\5\f\7\2\67\13\3\2\2\28;\5\20\t\29;\5\16\b"+
+		"\2:8\3\2\2\2:9\3\2\2\2;\r\3\2\2\2<=\5\20\t\2=>\7\6\2\2>?\5\f\7\2?\17\3"+
+		"\2\2\2@A\t\2\2\2A\21\3\2\2\2BC\5\24\13\2CD\5\4\3\2DE\5\26\f\2E\23\3\2"+
+		"\2\2FG\7\7\2\2GH\5\30\r\2H\25\3\2\2\2IJ\7\b\2\2J\27\3\2\2\2KL\5\20\t\2"+
+		"LM\5\20\t\2MN\5\32\16\2N\31\3\2\2\2OP\t\3\2\2P\33\3\2\2\2QR\7\f\2\2RV"+
+		"\7\16\2\2ST\7\r\2\2TV\7\17\2\2UQ\3\2\2\2US\3\2\2\2V\35\3\2\2\2\7 )/:U";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

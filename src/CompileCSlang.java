@@ -130,10 +130,10 @@ public class CompileCSLang extends CSLangBaseListener {
     public void exitPrintOut(CSLangParser.PrintOutContext ctx) {
         String value = "";
 
-        if (ctx.unaryExpression().ID() == null) {
-            value = ctx.unaryExpression().INT().getText();
+        if (ctx.ID() == null) {
+            value = ctx.INT().getText();
         } else {
-            value = ctx.unaryExpression().ID().getText();
+            value = ctx.ID().getText();
         }
 
         builder.append("print " + value + "\n");
