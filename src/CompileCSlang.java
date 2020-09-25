@@ -172,7 +172,7 @@ public class CompileCSLang extends CSLangBaseListener {
         value=ctx.getText();
 
         System.out.println("goto-startloop");
-        builder.append("goto-startloop"+"\n");
+        builder.append("goto startloop"+"\n");
         System.out.println("label "+value);
         builder.append("label "+value+"\n");
     }

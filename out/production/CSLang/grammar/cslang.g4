@@ -11,10 +11,8 @@ code
 statement
 : declaration
 | assignment
-| printout
-| startloop
-| stoploop
-| sum
+| printOut
+| loop
 ;
 
 declaration
@@ -24,8 +22,7 @@ assignment
 : ID 'is' expression;
 
 expression
-: ID
-| INT
+: unaryExpression
 | addExpression;
 
 addExpression
@@ -35,17 +32,26 @@ unaryExpression
 : ID
 | INT
 ;
-sum
-: startloop assignment; // loop + vad som ska loopas
 
-startloop // hur förstår kompilatorn att den ska loopa?
-: 'startloop' expression expression; // loop + antal ggr
+loop
+: startLoop code stopLoop; // när vi kör exit loop kolla värdet counter
 
-stoploop
-:'stoploop';
+startLoop // hur förstår kompilatorn att den ska loopa?
+: 'solong' condition;
 
-printout
-: 'write' ID;
+stopLoop // exit stoploop kolla värdet på count
+: 'stoploop';
+
+condition
+: unaryExpression unaryExpression comparison; // loop + antal ggr
+
+comparison
+: 'lt'
+| 'gt'
+| 'eq';
+
+printOut
+: 'write' unaryExpression;
 
 ID:	('a'..'z')+;
 INT: ('0'..'9')+ ;

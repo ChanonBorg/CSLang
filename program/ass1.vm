@@ -13,7 +13,7 @@ pop sum
 push count
 push 1
 pop count
-goto-startloop
+goto startloop
 label stoploop
 push sum
 print sum
