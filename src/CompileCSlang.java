@@ -1,8 +1,7 @@
 import grammar.CSLangBaseListener;
 import grammar.CSLangParser;
-import org.antlr.v4.runtime.ParserRuleContext;
-import org.antlr.v4.runtime.tree.ErrorNode;
-import org.antlr.v4.runtime.tree.TerminalNode;
+
+import java.util.HashMap;
 
 /**
  * @author Chanon Borgström
@@ -12,6 +11,8 @@ import org.antlr.v4.runtime.tree.TerminalNode;
 public class CompileCSLang extends CSLangBaseListener {
 
     StringBuilder builder = new StringBuilder();
+
+    HashMap<String, String> variableMap = new HashMap();
 
     public String getCompiledCode() {
         return builder.toString();
@@ -120,7 +121,6 @@ public class CompileCSLang extends CSLangBaseListener {
     }
 
 
-
     /**
      * {@inheritDoc}
      *
@@ -146,9 +146,11 @@ public class CompileCSLang extends CSLangBaseListener {
      *
      * <p>The default implementation does nothing.</p>
      */
-    @Override public void enterStartLoop(CSLangParser.StartLoopContext ctx) {
-            System.out.println("label startloop");
-            builder.append("label startloop"+"\n");
+    @Override
+    public void enterStartLoop(CSLangParser.StartLoopContext ctx) {
+
+        System.out.println("label " + ctx.getChild(0).getText());
+        builder.append("label " + ctx.getChild(0).getText() + "\n");
     }
 
     /**
@@ -156,41 +158,49 @@ public class CompileCSLang extends CSLangBaseListener {
      *
      * <p>The default implementation does nothing.</p>
      */
-    @Override public void exitStartLoop(CSLangParser.StartLoopContext ctx) {
-        String value="";
-        value = "if-goto stoploop";
+    @Override
+    public void exitStartLoop(CSLangParser.StartLoopContext ctx) {
+        String value = "if-goto " + ctx.getParent().children.get(2).getText();
 
         System.out.println(value);
-        builder.append(value+"\n");
+        builder.append(value + "\n");
     }
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation does nothing.</p>
-     */
-    @Override public void enterStopLoop(CSLangParser.StopLoopContext ctx) {
-        String value="";
-        value=ctx.getText();
-
-        System.out.println("goto-startloop");
-        builder.append("goto startloop"+"\n");
-        System.out.println("label "+value);
-        builder.append("label "+value+"\n");
-    }
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation does nothing.</p>
-     */
-    @Override public void exitStopLoop(CSLangParser.StopLoopContext ctx) { }
 
     /**
      * {@inheritDoc}
      *
      * <p>The default implementation does nothing.</p>
      */
-    @Override public void enterComparison(CSLangParser.ComparisonContext ctx) {
+    @Override
+    public void enterStopLoop(CSLangParser.StopLoopContext ctx) {
+        String startLoopName = ctx.getParent().children.get(0).getChild(0).getText();
+
+        System.out.println("goto " + startLoopName);
+        builder.append("goto " + startLoopName + "\n");
+
+        String stopLoopName = ctx.getText();
+
+        System.out.println("label " + stopLoopName);
+        builder.append("label " + stopLoopName + "\n");
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation does nothing.</p>
+     */
+    @Override
+    public void exitStopLoop(CSLangParser.StopLoopContext ctx) {
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation does nothing.</p>
+     */
+    @Override
+    public void enterComparison(CSLangParser.ComparisonContext ctx) {
         System.out.println(ctx.getText());
-        builder.append(ctx.getText()+"\n");
+        builder.append(ctx.getText() + "\n");
     }
 }

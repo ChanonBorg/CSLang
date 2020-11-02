@@ -2,7 +2,7 @@ push 0
 pop count
 push 0
 pop sum
-label startloop
+label solong
 push count
 push 3
 eq
@@ -15,6 +15,6 @@ push sum
 push count
 add
 pop sum
-goto startloop
+goto solong
 label stoploop
 print sum

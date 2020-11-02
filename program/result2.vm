@@ -2,7 +2,7 @@
   pop static 0
   push constant 0
   pop static 1
-label startloop
+label solong
   push static 0
   push constant 3
 eq
@@ -15,7 +15,7 @@ add
   push static 0
 add
   pop static 1
-goto startloop
+goto solong
 label stoploop
   push static 1
   pop that 16384
